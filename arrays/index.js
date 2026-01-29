@@ -181,3 +181,65 @@ const searchName = (name) => {
 }
 
 console.log(searchName('adrian'))
+
+// sort Method
+// the default sort method converts na element types into string
+// the default sorting order is ascending
+
+// console.log('After default sorting', names.sort())
+
+const artists = [
+  'Charles Aubry',
+  'Alphonse Mucha',
+  'Gustav Klimt',
+  'Aubrey Beardsley',
+  'Henri de Toulouse-Lautrec',
+  'William Morris'
+]
+
+// console.log('After default sorting', names.sort((a,b) => b.localeCompare(a)))
+// console.log('After default sorting', merge2.sort((a,b) => a - b))
+// console.log(merge2)
+
+// splice() Method
+console.log(names)
+
+// remove the last adrian from the array
+console.log(names.splice(names.length-1,1))
+console.log(names)
+
+// add shaira after roselyn
+names.splice(2,0,'shaira','adrian')
+console.log(names)
+
+// remove 2 elements from the array
+names.splice(1,2)
+console.log(names)
+
+// at() Method it like like bracket in array like this fruits[1] but in this code you cannot input negative values
+console.log(merge2)
+console.log(merge2.at(-2))
+
+// Grouping Object.groupBy()
+const employees = [
+  { name: 'Adrian Anicete', dept: 'IT', salary: 4500 },
+  { name: 'Maria Cruz', dept: 'HR', salary: 3800 },
+  { name: 'John Doe', dept: 'Finance', salary: 50000 },
+  { name: 'Liza Santos', dept: 'Marketing', salary: 42000 },
+  { name: 'Carlos Reyes', dept: 'IT', salary: 47000 },
+  { name: 'Anna Lopez', dept: 'Finance', salary: 52000 }
+]
+
+console.log(Object.groupBy(employees, ({dept}) => dept))
+
+const groupByLessThan5k = Object.groupBy(employees, ({salary}) => {
+    return salary >= 5000 ? 'More than 5k' : 'Less than 5k'
+})
+
+
+console.log(typeof groupByLessThan5k)
+
+const { 'Less than 5k': lessThan, 'More than 5k': moreThan } = groupByLessThan5k
+console.log(moreThan)
+
+console.log(Array.isArray(groupByLessThan5k))
