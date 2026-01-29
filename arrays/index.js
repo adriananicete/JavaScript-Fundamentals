@@ -72,3 +72,112 @@ const [ apple, strawberry = 'strawberry'] = fruits
 console.log(apple)
 console.log(strawberry)
 console.log(fruits)
+
+
+// Nested Arrays
+
+const num = [1,2,3,[4,5]]
+const arr = num[num.length - 1]
+const five = arr[arr.length - 1]
+
+console.log(arr)
+console.log(five)
+
+console.log(num[3][1])
+
+// Rest and Spread
+
+const instruments = ['guitar','drums','bass','violin','keyboard','flute']
+
+// Rest
+const [ guitar, drums, ...rest] = instruments
+console.log(guitar)
+console.log(drums)
+console.log(rest)
+
+// Spread
+const shallowCopy = [...instruments]
+console.log(shallowCopy)
+console.log(instruments)
+
+console.log(shallowCopy === instruments)
+
+
+// Swapping
+let two = 1;
+let one = 2;
+
+[two, one] = [one, two]
+
+console.log(one)
+console.log(two)
+
+// Merge
+const emotions = ['happy','sad']
+const veggies = ['talong','kalabasa','okra']
+
+const merge = [...emotions, ...veggies]
+console.log(merge)
+
+// length
+
+// another way to delete the last value/index in an araray
+veggies.length = 2
+console.log(veggies)
+
+// you can also delete the whole array by assigning 0 to the length property of an array
+veggies.length = 0
+console.log(veggies) // this will return empty array
+
+// Concat() Method
+const first = [1,2,3]
+const second = [4,5,6]
+const third = [7,8,9]
+const fourth = [10,11,12]
+
+const merge1 = first.concat(second)
+console.log(merge1)
+
+const merge2 = first.concat(second,third,fourth)
+console.log(merge2)
+
+// We can see that the original arrays are not change or mutate so concat is a non-mutating method
+console.log(first)
+console.log(second) 
+console.log(third)
+console.log(fourth)
+
+// Join() Method
+const name = ['a','d','r','i','a','n']
+console.log(name.join("-")) // join method returns a string
+
+// fill method - minumutate nya yung original array
+const colors = ['red','blue', 'green','violet','yellow']
+
+colors.fill('pink', 1,colors.length - 1)
+console.log(colors)
+
+// includes() Method
+const names = ['adrian','roselyn','aaron','dave','adrian']
+
+console.log(names.includes('adrian'))
+
+// indexOf() and lastIndexOf()
+console.log(names.indexOf('adrian'))
+console.log(names.indexOf('dave'))
+console.log(names.indexOf('bob'))
+
+console.log(names.lastIndexOf('adrian'))
+console.log(names.lastIndexOf('dave'))
+
+const searchName = (name) => {
+    
+    if(names.includes(name)){
+        const i = names.indexOf(name)
+        return `We found ${names[i]}`
+    } else {
+        return 'We cannot find ' + name
+    }
+}
+
+console.log(searchName('adrian'))
