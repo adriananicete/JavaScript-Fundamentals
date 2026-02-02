@@ -315,7 +315,7 @@ const customers = [
     'gender': "Male",
     'married': true,
     'age': 60,
-    'expense': 15000,
+    'expense': 1,
     'purchased': ['Shampoo', 'Toys','Book']
   },
   {
@@ -325,7 +325,7 @@ const customers = [
     'gender': "Female",
     'married': false,
     'age': 26,
-    'expense': 8200,
+    'expense': 2,
     'purchased': ['Stick', 'Blade']
   },
   {
@@ -335,7 +335,7 @@ const customers = [
     'gender': "Male",
     'married': true,
     'age': 45,
-    'expense': 21000,
+    'expense': 3,
     'purchased': ['Lipstick', 'Nail Polish','Bag', 'Book']
   },
   {
@@ -345,7 +345,7 @@ const customers = [
     'gender': "Female",
     'married': true,
     'age': 61,
-    'expense': 17500,
+    'expense': 4,
     'purchased': ['Book']
   },
   {
@@ -354,8 +354,8 @@ const customers = [
     'lastname': "Garcia",
     'gender': "Male",
     'married': false,
-    'age': 23,
-    'expense': 4500,
+    'age': 3,
+    'expense': 5,
     'purchased': ['Toys']
   },
   {
@@ -365,7 +365,7 @@ const customers = [
     'gender': "Female",
     'married': true,
     'age': 29,
-    'expense': 4500,
+    'expense': 6,
     'purchased': ['Lipstick']
   },
   {
@@ -375,7 +375,17 @@ const customers = [
     'gender': "Male",
     'married': true,
     'age': 29,
-    'expense': 4500,
+    'expense': 7,
+    'purchased': ['Guitar']
+  },
+  {
+    'id': 8,
+    'firstname': "Aaron",
+    'lastname': "Anicete",
+    'gender': "Male",
+    'married': true,
+    'age': 9,
+    'expense': 8,
     'purchased': ['Guitar']
   }
 ];
@@ -404,3 +414,61 @@ const customersWithFullNames = customers.map(customer => {
 }) 
 
 console.log(customersWithFullNames)
+
+// reduce()
+// mayroon ding reduceRight() ginagamit sya pag gusto mo na yung arrays ay magsimula sa right
+// kasi ang default ng reduce ay left to right
+const totalExpense = customers.reduce((acc, curr) => acc + curr.expense, 0)
+console.log(totalExpense)
+
+let count = 0;
+const total = customers.reduce((acc, customer) => {
+  
+
+  if(customer.purchased.includes('Book')){
+    acc = acc + customer.age
+    count++;
+  }
+
+   return acc
+}, 0)
+
+console.log(Math.floor(total/count))
+
+// some() return a boolean kung mayron kahit isang tumama sa condition doon sa array it will return true
+// 
+
+const hasYoungCustomer = customers.some((customer) => customer.age <= 18)
+console.log(hasYoungCustomer)
+
+// every() boolean din ang every method pero it needs to be all true
+// kung ang some method ay need lang ng isang tumama sa condition si every ay need lahat magtrue sa condition
+const isAllMarried = customers.every(customer => customer.married)
+console.log('is all Married? ',isAllMarried)
+
+// find() - para syang si some pero hindi boolean ang nirereturn nya kung yung mismong element at same lang na kung sino yung unang magtrue sa condition yun lang ang irereturn nya
+const foundYoungCustomer = customers.find(customer => customer.age <= 10 && customer.married)
+console.log('young customer ',foundYoungCustomer)
+
+// findIndex()
+const foundYoungCustomerIndex = customers.findIndex(customer => (customer.age <= 10 ))
+console.log('young customer index ',foundYoungCustomerIndex)
+
+
+// filter to filter all married
+// map to get only the array value of expense
+// reduce to get the total expense of all married
+
+const filterMarried = customers.filter(customer => customer.married)
+console.log(filterMarried)
+
+const expenseMapped = filterMarried.map(customer => customer.expense)
+console.log(expenseMapped)
+
+const totalExpenseMarriedCustomer = expenseMapped.reduce((acc, expense) => acc + expense)
+console.log(totalExpenseMarriedCustomer)
+
+// use can Array method chaining this methods we can refactor the code above
+const totalCustomerExpense = customers.filter(customer => customer.married).map(customer => customer.expense).reduce((acc, expense) => acc + expense);
+
+console.log('Refactor code result: ', totalCustomerExpense)
