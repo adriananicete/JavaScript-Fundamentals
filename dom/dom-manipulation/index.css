@@ -1,0 +1,22 @@
+.main-class {
+    background-color: red;
+    border: 1px solid blue;
+}
+
+.secondary-class {
+    background-color: yellow;
+    border: 1px solid green;
+}
+
+/* button {
+    padding: 20px;
+    font-size: 18px;
+} */
+
+.hidden {
+    display: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
