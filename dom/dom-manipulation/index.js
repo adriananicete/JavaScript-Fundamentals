@@ -4,6 +4,8 @@ hTwo.innerText = "Hello World";
 document.body.appendChild(hTwo);
 console.log(hTwo);
 
+console.log('next sibling',hTwo.nextSibling)
+
 const hThree = document.createElement("h3");
 hThree.innerText = "Hi world";
 document.body.appendChild(hThree);
@@ -27,6 +29,7 @@ console.log(itemToRemove);
 list.removeChild(itemToRemove);
 
 span.remove(); // direct removal
+
 
 // Read Write and Remove Attribute
 {
@@ -55,3 +58,21 @@ function changeImg(){
 }
 
 // Traverisng/Navigation DOM
+{
+    // parentElement and parentNode
+    const span = document.getElementById('text')
+
+    console.log('Parent Element',span.parentElement)
+    console.log(span.parentNode.parentNode)
+
+    // children and childNodes
+    const mainId = document.getElementById('main-id');
+    // console.log(mainId.children)
+    // console.log(mainId.childNodes)
+
+    console.log(mainId.firstChild)
+    console.log(mainId.firstElementChild)
+
+
+
+}
