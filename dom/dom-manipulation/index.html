@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>DOM Manipulation</h1>
+
+    <ul id="myList">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+    </ul>
+
+    <img src="someImage.png" alt="someImage" height="200px" width="400px"> <br>
+    <button onclick="changeSize()">Change Size</button>
+    <button onclick="defaultSize()">Default Size</button>
+    <button onclick="changeImg()">Change Image</button>
+
+    <br>
+    <div id="main-id" class="main-class layout">
+        <p class="info">
+            <span id="text">I Love DOM</span>
+        </p>
+    </div>
+    <hr>
+    <hr>
+    <div>
+        <h1>Toggle Paragraph Example</h1>
+        <button onclick="toggleInfo()" class="action" id="toggleBtn">Show/Hide Paragraph</button>
+        <p class="info" id="myParagraph">This paragraph that can be shown or hidden by clicking the button above.</p>
+    </div>
+    <hr>
+    <hr>
+    <div>
+        <h1>Task Manager</h1> <br>
+        <input type="text" name="" id="taskInput" placeholder="New Task">
+        <button onclick="addTask()">Add Task</button>
+        <input type="text" onkeyup="filterTask()" name="" id="searchInput" placeholder="Search Tasks...">
+        <ul id="taskList"></ul>
+
+    </div>
+</body>
+</html>
