@@ -96,3 +96,35 @@ document.querySelector('#son').addEventListener('click', (e) => {
     e.stopPropagation()
     console.log('Child is clicked...')
 })
+
+// Event Default
+document.querySelector('#websiteLink').addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('Default link behaviour prevented')
+})
+
+document.querySelector('#loginForm').addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    console.log('Form submission Prevented')
+})
+
+// Project
+const faq = document.querySelector('.faq');
+
+faq.addEventListener('click', (e) => {
+    if(e.target.classList.contains('question')){
+        e.stopPropagation()
+
+        const currentItem = e.target.parentElement
+    const currentAnswer = currentItem.querySelector('.answer')
+
+    currentAnswer.classList.toggle('show')
+    }
+})
+
+document.addEventListener('click', () => {
+    const allAnswers = document.querySelectorAll('.answer.show')
+
+    allAnswers.forEach(ans => ans.classList.remove('show'))
+})
