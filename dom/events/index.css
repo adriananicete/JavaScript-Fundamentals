@@ -1,0 +1,11 @@
+.answer {
+    display: none;
+}
+
+.answer.show {
+    display: block;
+}
+
+.faq{
+    background-color: red;
+}
