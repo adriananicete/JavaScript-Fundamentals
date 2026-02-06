@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./index.js"></script>
+</head>
+<body>
+    <h1>JavaScript Events</h1>
+    <hr>
+    <h2>Event Handling</h2>
+    <button id="myBtn" onclick="handleClick('Adrian')">Click Me</button>
+    <button id="myBtn2">Click Me 2</button>
+    <button id="countBtn">Count++</button>
+    <hr>
+    <h2>Event Object</h2>
+    <input type="text" name="search" id="search-id" placeholder="Search...">
+
+    <hr><hr><hr>
+    <h2>Event Bubbling, Capturing and Delegation</h2>
+    <div id="grandparent">
+        <div id="parent">
+            <button id="child">Click Me</button>
+        </div>
+    </div>
+    
+    <ul id="itemList">
+        <li>Adrian</li>
+        <li>Roselyn</li>
+        <li>Dave</li>
+        <li>Shaira</li>
+        
+    </ul>
+
+    <input type="text" class="para">
+
+    <hr><hr><hr>
+
+    <div id="father" style="width: 200px; height: auto; padding: 30px; display: flex; justify-content: space-between; align-items: center; background-color: pink;">
+        Parent
+        <button id="son">Click Me</button>
+    </div>
+</body>
+</html>
